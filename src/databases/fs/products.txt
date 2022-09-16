@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Tijeras",
+    "price": 150,
+    "description": "Sirven para cortar papeles",
+    "thumbnail": "https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Sclssors.png",
+    "stock": 35,
+    "codigo": "Tij1663291466261",
+    "timestamp": 1663291466261,
+    "id": 2
+  }
+]

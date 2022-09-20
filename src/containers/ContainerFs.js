@@ -3,6 +3,7 @@ const fs = await import("fs");
 class ContainerFs {
   constructor(path) {
     this.path = path;
+    this.connect();
   }
 
   idAvailable(array) {
@@ -17,6 +18,10 @@ class ContainerFs {
       previousId = element.id;
     }
     return previousId + 1;
+  }
+
+  async connect() {
+    console.log("File System Connected");
   }
 
   async readFile() {

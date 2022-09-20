@@ -12,17 +12,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = process.env.PORT;
 
-//*--------------------------------------*//
-//*------ Connections to Databases -------*//
-//*--------------------------------------*//
-
-//* Connection to Firebase */
-
-//* Connection to MongoDb */
-
-import connectDB from "./databases/mongoDB/connection.js";
-connectDB();
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "public"));

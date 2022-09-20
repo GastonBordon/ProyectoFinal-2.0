@@ -1,3 +1,5 @@
+//* Connection to Firebase */
+
 import admin from "firebase-admin";
 console.log(process.env.FIREBASE_PATH);
 import serviceAcount from "../databases/firebase/backend-32070-c810f-firebase-adminsdk-rvp1q-4a3b561c55.json" assert { type: "json" };
@@ -10,6 +12,11 @@ class ContainerFirebase {
   constructor(name) {
     const db = admin.firestore();
     this.query = db.collection(name);
+    this.connect();
+  }
+
+  async connect() {
+    console.log("Firebase Connected");
   }
 
   async getAllFile() {

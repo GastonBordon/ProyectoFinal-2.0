@@ -1,18 +1,17 @@
 //* Connection to Firebase */
-
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 import admin from "firebase-admin";
-console.log(process.env.FIREBASE_PATH);
-import serviceAcount from "../databases/firebase/backend-32070-c810f-firebase-adminsdk-rvp1q-4a3b561c55.json" assert { type: "json" };
+const serviceAcount = require("../databases/firebase/backend-32070-c810f-firebase-adminsdk-rvp1q-1572d0b9c8.json");
+
 admin.initializeApp({
   credential: admin.credential.cert(serviceAcount),
 });
-console.log("Firestore connected");
-
 class ContainerFirebase {
   constructor(name) {
+    this.connect();
     const db = admin.firestore();
     this.query = db.collection(name);
-    this.connect();
   }
 
   async connect() {
@@ -36,7 +35,7 @@ class ContainerFirebase {
     try {
       const doc = this.query.doc(id);
       const response = await doc.get();
-      return response.data();
+      return { id: response.id, ...response.data() };
     } catch (error) {
       throw new Error("Error al realizar lectura" + error);
     }
@@ -45,8 +44,10 @@ class ContainerFirebase {
   async saveInFile(element) {
     try {
       const data = await this.query.doc();
+
       await data.create(element).then((res) => console.log(res));
-      return "Prueba";
+
+      return "Producto cargado correctamente";
     } catch (error) {
       throw new Error("Error al guardar en base de datos" + error);
     }

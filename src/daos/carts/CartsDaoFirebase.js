@@ -12,8 +12,6 @@ class CartsDaoFirebase extends ContainerFirebase {
     return cart;
   }
 
-  //! FALTA QUE FUNCIONEN ESTOS
-
   async changeCartProducts(idCart, newProductsList) {
     try {
       const newCart = await this.updateById(idCart, {
@@ -29,7 +27,7 @@ class CartsDaoFirebase extends ContainerFirebase {
     try {
       this.getById(idCart).then((data) => {
         const updatedList = data.products.filter(
-          (product) => product._id != idProductToDelete
+          (product) => product.id != idProductToDelete
         );
         this.updateById(idCart, { products: updatedList });
       });

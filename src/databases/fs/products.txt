@@ -10,13 +10,13 @@
     "id": 2
   },
   {
-    "title": "Tijeras",
-    "price": 150,
-    "description": "Sirven para cortar",
-    "thumbnail": "https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Sclssors.png",
-    "stock": 5,
-    "codigo": "Tij1663366360896",
-    "timestamp": 1663366360896,
-    "id": 1
+    "title": "papa",
+    "price": 5000,
+    "description": "Las sandías más cuadradas del mundo",
+    "thumbnail": "https://cdn3.iconfinder.com/data/icons/fruits-52/150/icon_fruit_melancia-256.png",
+    "stock": 900,
+    "codigo": "pap1663727793456",
+    "timestamp": 1663727793456,
+    "id": 3
   }
 ]

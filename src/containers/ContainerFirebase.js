@@ -43,11 +43,9 @@ class ContainerFirebase {
 
   async saveInFile(element) {
     try {
-      const data = await this.query.doc();
+      const data = await this.query.add(element);
 
-      await data.create(element).then((res) => console.log(res));
-
-      return "Producto cargado correctamente";
+      return data;
     } catch (error) {
       throw new Error("Error al guardar en base de datos" + error);
     }
